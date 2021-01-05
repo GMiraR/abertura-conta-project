@@ -18,14 +18,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 
 @EnableAutoConfiguration(exclude = {org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration.class})
-@Controller
+@RestController
 public class UserController {
 	
 	@Autowired
 	private UserRepository repo;
 
 	@RequestMapping("/home")
-	@ResponseBody
 	public String viewHomePage() {
 		return "index";
 	}
